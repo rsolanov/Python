@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Главная страница</h1>
+<p>Добро пожаловать в телефонный справочник!</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for phone, contact in contacts.items() %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>{{ contact.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
